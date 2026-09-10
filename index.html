@@ -226,6 +226,12 @@ h2.blk-t{font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-it
 .shot-t{font-size:13px;font-weight:600}
 .shot-n{font-size:11.5px;color:var(--ink-3);margin-top:2px;line-height:1.5}
 .drawing{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--card);margin-top:12px}
+.plan-group{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.plan-group summary{cursor:pointer;font-size:17px;font-weight:600;padding:8px 0}
+.plan-group summary span{font-size:12px;font-weight:400;color:var(--ink-3);margin-left:12px}
+.latest-plans .drawing-info{padding-bottom:12px;flex-wrap:wrap}
+.latest-plans .drawing img{aspect-ratio:auto}
+.plan-open{font-size:13px;white-space:nowrap;text-decoration:underline;text-underline-offset:3px}
 .drawing:first-of-type{margin-top:0}
 .drawing img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:#fbf7ec;border-bottom:1px solid var(--line);cursor:zoom-in}
 .drawing-empty{height:150px;display:grid;place-items:center;background:#fbf7ec;color:var(--ink-3);font-size:14px;border-bottom:1px solid var(--line)}
@@ -288,6 +294,18 @@ h2.blk-t{font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-it
 .photos img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;border:1px solid var(--line);cursor:zoom-in}
 
 /* 参与方 */
+.contact-note{font-size:13px;color:var(--ink-2);line-height:1.7;margin:0 0 16px}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
+.contact-card{min-width:0;border:1px solid var(--line);border-radius:8px;padding:16px}
+.contact-role{font-size:12px;color:var(--ink-3)}
+.contact-name{font-size:18px;margin:4px 0 12px}
+.contact-details{margin:0;font-size:14px}
+.contact-details>div{display:flex;gap:12px;margin-top:6px;align-items:baseline}
+.contact-details dt{flex:none;color:var(--ink-3);font-size:12px}
+.contact-details dd{margin:0;min-width:0;overflow-wrap:anywhere;user-select:text}
+.contact-details a{text-decoration:underline;text-underline-offset:3px}
+.contact-pending{color:var(--ink-3)}
+.contact-rule{margin:16px 0 0}
 .party{display:flex;gap:10px;font-size:14px;padding:8px 0;border-top:1px solid var(--line-soft);align-items:baseline}
 .party:first-of-type{border-top:none;padding-top:0}
 .party-role{flex:none;width:64px;color:var(--ink-3);font-size:13px}
@@ -361,7 +379,7 @@ footer{text-align:center;font-size:12px;color:var(--ink-3);margin-top:22px;line-
       <div class="nav-d">还悬着的事,谁拍板</div>
     </a>
     <a href="#history">
-      <div class="nav-t"><span class="nav-n">06</span>历程<span class="nav-c">26</span></div>
+      <div class="nav-t"><span class="nav-n">06</span>历程<span class="nav-c">28</span></div>
       <div class="nav-d">方案变更与动态流水</div>
     </a>
     <a href="#about">
@@ -388,8 +406,8 @@ footer{text-align:center;font-size:12px;color:var(--ink-3);margin-top:22px;line-
 </div>
 <div class="floor"><div class="floor-in">
   <div class="floor-h"><h2>平面结构</h2><span>点图看大图</span></div>
-  <div class="segs"><button class="on" data-src="assets/img-02.png" data-note="设计一版平面布置:主卧、长辈房、儿童房、多功能房、客餐厅、厨房、双卫与生活阳台的家具动线。带尺寸标注的版本留内部。">平面布置</button><button class="" data-src="assets/img-01.jpg" data-note="改造前的原始户型,标了各房间名称与面积(客厅 33.6㎡、卧室 A 14.1㎡、卧室 B 10.6㎡、卧室 C 9.5㎡ 等)。">原始户型</button><button class="" data-src="assets/img-03.png" data-note="阴影部分为拆除的墙体,这一版已于 2026-07-29 施工完成。图上门牌与公司联系方式已裁掉。">拆除范围</button></div>
-  <div class="floor-fig"><img src="assets/img-02.png" alt="平面布置"></div>
+  <div class="segs"><button class="on" data-src="assets/img-02.png" data-note="设计一版平面布置:主卧、长辈房、儿童房、多功能房、客餐厅、厨房、双卫与生活阳台的家具动线。带尺寸标注的版本留内部。">历史一版平面</button><button class="" data-src="assets/img-01.jpg" data-note="改造前的原始户型,标了各房间名称与面积(客厅 33.6㎡、卧室 A 14.1㎡、卧室 B 10.6㎡、卧室 C 9.5㎡ 等)。">原始户型</button><button class="" data-src="assets/img-03.png" data-note="阴影部分为拆除的墙体,这一版已于 2026-07-29 施工完成。图上门牌与公司联系方式已裁掉。">历史拆除范围</button></div>
+  <div class="floor-fig"><img src="assets/img-02.png" alt="历史一版平面"></div>
   <p class="floor-note">设计一版平面布置:主卧、长辈房、儿童房、多功能房、客餐厅、厨房、双卫与生活阳台的家具动线。带尺寸标注的版本留内部。</p>
 </div></div><div class="wrap">
   <section class="blk">
@@ -422,7 +440,7 @@ footer{text-align:center;font-size:12px;color:var(--ink-3);margin-top:22px;line-
     </a>
     <a href="#history">
       <div class="entry-n">06</div>
-      <div class="entry-t">历程<span class="cnt">26</span></div>
+      <div class="entry-t">历程<span class="cnt">28</span></div>
       <div class="entry-d">方案变更与动态流水</div>
     </a>
     <a href="#about">
@@ -536,7 +554,7 @@ footer{text-align:center;font-size:12px;color:var(--ink-3);margin-top:22px;line-
     </div>
   </section>
   <section class="blk">
-    <h2 class="blk-t">图纸资料<span class="h2-note">原始、拆改、平面、水电逐步补齐</span></h2>
+    <h2 class="blk-t">图纸资料<span class="h2-note">历史概览与最新归档状态</span></h2>
     
     <div class="drawing">
       <img src="assets/img-01.jpg" alt="原始户型图" loading="lazy">
@@ -551,17 +569,17 @@ footer{text-align:center;font-size:12px;color:var(--ink-3);margin-top:22px;line-
     <div class="drawing">
       <img src="assets/img-02.png" alt="平面布置图" loading="lazy">
       <div class="drawing-info"><div class="drawing-title">平面布置图</div><span class="badge">设计一版</span></div>
-      <p class="pend-note">第一版平面布置的家具动线;带尺寸标注的版本留内部。定稿版脱敏后替换。</p>
+      <p class="pend-note">历史设计一版，保留方案演变记录；最新详细尺寸图在完整版展示。</p>
     </div>
     <div class="drawing">
       <div class="drawing-empty">待补图纸</div>
-      <div class="drawing-info"><div class="drawing-title">施工图(定稿)</div><span class="badge">已收到 07-31</span></div>
-      <p class="pend-note">水电、立面与节点齐全,是各家报价比选的同一份依据。原件含门牌与设计单位信息,脱敏线稿版后续再上页。</p>
+      <div class="drawing-info"><div class="drawing-title">最新施工图 · 8.26 版</div><span class="badge">33 页已归档</span></div>
+      <p class="pend-note">平面、水电、吊顶灯位与空间立面已完整保存；详细尺寸图在完整版设计方案中查看。此处历史概览不作为最新施工交底。</p>
     </div>
     <div class="drawing">
       <div class="drawing-empty">待补图纸</div>
-      <div class="drawing-info"><div class="drawing-title">水电点位图</div><span class="badge">待脱敏上页</span></div>
-      <p class="pend-note">已含在施工图定稿里;封墙前的现场照片会和点位图一起存档互相对照。</p>
+      <div class="drawing-info"><div class="drawing-title">水电点位图</div><span class="badge">已归档</span></div>
+      <p class="pend-note">最新 8.26 版 P06/P07/P13/P14 已在完整版展示；设计点位需和隐蔽工程现场影像、实测对照。</p>
     </div>
   </section></div></section>
 <section class="page" id="plan">
@@ -1075,8 +1093,10 @@ footer{text-align:center;font-size:12px;color:var(--ink-3);margin-top:22px;line-
     <div class="chg"><div class="chg-date">2026-06-14</div><div class="chg-what">装修方式定调:走装修公司整装,放弃独立设计师路线</div><div class="chg-why">为什么:全家沟通后定的:整装工期可控(约 90 天)、整体花费更实惠;独立设计师更称心但工期长、总价压不住。</div></div>
   </section>
   <section class="blk">
-    <h2 class="blk-t">动态<span class="cnt">26</span></h2>
+    <h2 class="blk-t">动态<span class="cnt">28</span></h2>
     
+    <div class="upd"><div class="upd-date">2026-09-10</div><div class="upd-body"><p>业主确认 8.26 版删除入户 D 立面，属于方案更改，旧版仅作历史记录保留。已授权将去除联系方式的 33 页施工图发布到现有完整版网站，持有链接即可直接访问。</p></div></div>
+    <div class="upd"><div class="upd-date">2026-09-10</div><div class="upd-body"><p>收到 8.26 最新施工图，共 33 页，平面、水电、吊顶灯位和各房间立面已完整归档。完整版设计方案已补齐图纸，木工阶段优先核对吊顶、灯具和开关。</p></div></div>
     <div class="upd"><div class="upd-date">2026-09-10</div><div class="upd-body"><p>业主确认全屋硬装已进入木工阶段，木工已进场。水电测试打压阶段的全屋影像入口已登记为重要隐蔽工程资料，供后期管线定位核对；原始影像、打压报告及测试结论待备份核验。</p></div></div>
     <div class="upd"><div class="upd-date">2026-08-23</div><div class="upd-body"><p>门窗定标并预付八成:四家按同一把尺子重算后选定最低的一家,优惠后成交 32,500。12 页逐窗加工图(窗号、分格、玻璃配置、五金、单套面积)已归档,交期从复尺日起算 30 个工作日,复尺约排在 9 月 18 日。同时记下三个要办的:报价单抬头写错了人要改出重签、吊装费含不含要说清、复尺结果要书面确认后再下料。</p></div></div>
     <div class="upd"><div class="upd-date">2026-08-23</div><div class="upd-body"><p>中央空调签约:国产一线品牌整套系统,固定综合价 19,000 含安装,主机 7 匹 + 4 台室内机,设备质保 6 年、电控 2 年,待进场。合同、逐房间配置表和 29 项材料品牌表都已归档。同时发现三件要马上办的事:覆盖范围要书面确认(有两个房间没有室内机)、风口谁供要说清、空调要的电和开孔要转给基装。</p></div></div>
